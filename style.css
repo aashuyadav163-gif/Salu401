@@ -1,0 +1,146 @@
+/* Global Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+    background: radial-gradient(circle at top, #ffdde1 0%, #ee9ca7 100%);
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+}
+.container {
+  width: 90%;
+  max-width: 450px;
+  padding: 3rem 2rem;
+  margin: 5vh auto;
+  box-sizing: border-box;
+  border-radius: 1.5rem;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 2rem rgb(231 84 128 / 65%);
+  text-align: center;
+}
+
+.love-message {
+    font-size: clamp(1rem, 1.5vw, 1.3rem);
+    color: #e75480;
+    font-size: 1.3em;
+    margin-top: 30px;
+    letter-spacing: 0.08em;
+}
+button {
+    margin-top: 20px;
+    background: #e75480;
+    color: white;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+button:hover {
+    background: #c0395b;
+}
+
+/* Photo Gallery Styles */
+.photo-gallery {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+.photo-gallery img {
+  width: 18vw;
+  max-width: 120px;
+  height: auto;
+  border-radius: 1rem;
+  box-shadow: 0 0.15rem 1rem rgb(231 84 128 / 0.6);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+.photo-gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* Animated Wish */
+.animated-wish {
+     font-size: clamp(1rem, 2vw, 1.2rem);
+    font-size: 1.25em;
+    color: #e75480;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    margin-top: 18px;
+    position: relative;
+    animation: shimmerScale 2.6s ease-in-out;
+    background: linear-gradient(90deg, #e75480 38%, #fffbe7 50%, #e75480 62%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+@keyframes shimmerScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.7);
+        background-position: 0% center;
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.1);
+        background-position: 100% center;
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+        background-position: 200% center;
+    }
+}
+
+/* Heart Animation */
+.hearts-bg {
+    z-index: 1;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+}
+.heart {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: url('https://upload.wikimedia.org/wikipedia/commons/4/46/Animated_heart.gif') no-repeat center/contain;
+    opacity: 0.3;
+    animation: floatHearts 7s linear infinite;
+}
+@keyframes floatHearts {
+    0% {
+        transform: translateY(100vh) scale(0.8);
+        opacity:0.5;
+    }
+    100% {
+        transform: translateY(-10vh) scale(1.2);
+        opacity:0;
+    }
+}
+
+
+/* YouTube Video Container */
+.video-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+.video-container iframe {
+  width: 90vw;
+  max-width: 360px;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border-radius: 1rem;
+  box-shadow: 0 0 1rem rgb(231 84 128 / 0.6);
+}
